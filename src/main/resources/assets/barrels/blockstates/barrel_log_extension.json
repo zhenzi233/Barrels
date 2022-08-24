@@ -1,0 +1,16 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "barrels:barrel_extension"
+  },
+  "variants": {
+    "variant": {
+      "oak": { "textures": { "texture": "blocks/log_oak" }},
+      "spruce": { "textures": { "texture": "blocks/log_spruce" }},
+      "birch": { "textures": { "texture": "blocks/log_birch" }},
+      "jungle": { "textures": { "texture": "blocks/log_jungle" }},
+      "acacia": { "textures": { "texture": "blocks/log_acacia" }},
+      "dark_oak": { "textures": { "texture": "blocks/log_big_oak" }}
+    }
+  }
+}
