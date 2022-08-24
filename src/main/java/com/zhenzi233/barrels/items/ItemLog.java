@@ -20,10 +20,8 @@ public class ItemLog extends ItemCloth {
     {
         if (this.block == Barrels.BARREL_ROCK || this.block == Barrels.BARREL_ROCK_EXTENSION)
         {
-            System.out.println(super.getUnlocalizedName() + "." + BlockStone.EnumType.byMetadata(stack.getMetadata()).getUnlocalizedName().toLowerCase());
             return super.getUnlocalizedName() + "." + BlockStone.EnumType.byMetadata(stack.getMetadata()).getUnlocalizedName().toLowerCase();
         }   else {
-            System.out.println(super.getUnlocalizedName() + "." + BlockPlanks.EnumType.byMetadata(stack.getMetadata()).getUnlocalizedName().toLowerCase());
             return super.getUnlocalizedName() + "." + BlockPlanks.EnumType.byMetadata(stack.getMetadata()).getUnlocalizedName().toLowerCase();
         }
     }
