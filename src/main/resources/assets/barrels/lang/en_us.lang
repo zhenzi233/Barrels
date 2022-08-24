@@ -1,0 +1,5 @@
+#information for barrel
+itemGroup.barrels.barrels= More Barrels
+#barrels block
+tile.barrels.barrel_log.oak.name=Oak Barrel
+tile.barrels.barrel_log.spruce.name=Spruce Barrel
