@@ -1,0 +1,25 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "forge:item-layer",
+    "textures": {
+      "layer0": "barrels:items/clay_bowl",
+      "layer2": "barrels:items/clay_bowl_cover"
+    },
+    "transform": "forge:default-item"
+  },
+  "variants": {
+    "inventory": {
+      "model": "forge:forgebucket",
+      "textures": {
+        "base": "barrels:items/clay_bowl",
+        "fluid": "barrels:items/clay_bowl_mask",
+        "cover": "barrels:items/clay_bowl_cover"
+      },
+      "custom": {
+        "fluid": "water",
+        "flipGas": true
+      }
+    }
+  }
+}

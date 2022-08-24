@@ -1,5 +1,43 @@
 #information for barrel
-itemGroup.barrels.barrels= More Barrels
+itemGroup.barrels.barrels=More Barrels
+#barrels item
+item.barrels.clay_bowl.name=Clay Bowl
 #barrels block
 tile.barrels.barrel_log.oak.name=Oak Barrel
 tile.barrels.barrel_log.spruce.name=Spruce Barrel
+tile.barrels.barrel_log.birch.name=Birch Barrel
+tile.barrels.barrel_log.jungle.name=Jungle Barrel
+tile.barrels.barrel_log.acacia.name=Acacia Barrel
+tile.barrels.barrel_log.big_oak.name=Big Oak Barrel
+tile.barrels.barrel_log_extension.oak.name=Oak Barrel Extension
+tile.barrels.barrel_log_extension.spruce.name=Spruce Barrel Extension
+tile.barrels.barrel_log_extension.birch.name=Birch Barrel Extension
+tile.barrels.barrel_log_extension.jungle.name=Jungle Barrel Extension
+tile.barrels.barrel_log_extension.acacia.name=Acacia Barrel Extension
+tile.barrels.barrel_log_extension.big_oak.name=Big Oak Barrel Extension
+tile.barrels.barrel_plank.oak.name=Oak Planks Barrel
+tile.barrels.barrel_plank.spruce.name=Spruce Planks Barrel
+tile.barrels.barrel_plank.birch.name=Birch Planks Barrel
+tile.barrels.barrel_plank.jungle.name=Jungle Planks Barrel
+tile.barrels.barrel_plank.acacia.name=Acacia Planks Barrel
+tile.barrels.barrel_plank.big_oak.name=Big Oak Planks Barrel
+tile.barrels.barrel_plank_extension.oak.name=Oak Planks Barrel Extension
+tile.barrels.barrel_plank_extension.spruce.name=Spruce Planks Barrel Extension
+tile.barrels.barrel_plank_extension.birch.name=Birch Planks Barrel Extension
+tile.barrels.barrel_plank_extension.jungle.name=Jungle Planks Barrel Extension
+tile.barrels.barrel_plank_extension.acacia.name=Acacia Planks Barrel Extension
+tile.barrels.barrel_plank_extension.big_oak.name=Big Oak Planks Barrel Extension
+tile.barrels.barrel_rock.stone.name=Stone Barrel
+tile.barrels.barrel_rock.granite.name=Granite Barrel
+tile.barrels.barrel_rock.granitesmooth.name=Polish Granite Barrel
+tile.barrels.barrel_rock.diorite.name=Diorite Barrel
+tile.barrels.barrel_rock.dioritesmooth.name=Polish Diorite Barrel
+tile.barrels.barrel_rock.andesite.name=Andesite Barrel
+tile.barrels.barrel_rock.andesitesmooth.name=Polish Andesite Barrel
+tile.barrels.barrel_rock_extension.stone.name=Stone Barrel Extension
+tile.barrels.barrel_rock_extension.granite.name=Granite Barrel Extension
+tile.barrels.barrel_rock_extension.granitesmooth.name=Polish Granite Barrel Extension
+tile.barrels.barrel_rock_extension.diorite.name=Diorite Barrel Extension
+tile.barrels.barrel_rock_extension.dioritesmooth.name=Polish Diorite Barrel Extension
+tile.barrels.barrel_rock_extension.andesite.name=Andesite Barrel Extension
+tile.barrels.barrel_rock_extension.andesitesmooth.name=Polish Andesite Barrel Extension
