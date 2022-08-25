@@ -1,0 +1,44 @@
+#更多桶信息
+
+itemGroup.barrels.barrels=更多桶
+#物品
+item.barrels.clay_bowl.name=硬质粘土 碗
+#方块
+tile.barrels.barrel_log.oak.name=橡木 木桶
+tile.barrels.barrel_log.spruce.name=云杉 木桶
+tile.barrels.barrel_log.birch.name=白桦 木桶
+tile.barrels.barrel_log.jungle.name=丛林 木桶
+tile.barrels.barrel_log.acacia.name=金合欢 木桶
+tile.barrels.barrel_log.big_oak.name=大型 橡木 木桶
+tile.barrels.barrel_log_extension.oak.name=橡木延展木桶
+tile.barrels.barrel_log_extension.spruce.name=云杉延展木桶
+tile.barrels.barrel_log_extension.birch.name=白桦延展木桶
+tile.barrels.barrel_log_extension.jungle.name=丛林延展木桶
+tile.barrels.barrel_log_extension.acacia.name=金合欢延展木桶
+tile.barrels.barrel_log_extension.big_oak.name=大型延展橡木木桶
+tile.barrels.barrel_plank.oak.name=橡木木板 木桶
+tile.barrels.barrel_plank.spruce.name=云杉木板 木桶
+tile.barrels.barrel_plank.birch.name=白桦木板 木桶
+tile.barrels.barrel_plank.jungle.name=丛林木板 木桶
+tile.barrels.barrel_plank.acacia.name=金合欢木板 木桶
+tile.barrels.barrel_plank.big_oak.name=大型 橡木木板 木桶
+tile.barrels.barrel_plank_extension.oak.name=橡木木板延展木桶
+tile.barrels.barrel_plank_extension.spruce.name=云杉木板延展木桶
+tile.barrels.barrel_plank_extension.birch.name=白桦木板延展木桶
+tile.barrels.barrel_plank_extension.jungle.name=丛林木板延展木桶
+tile.barrels.barrel_plank_extension.acacia.name=金合欢木板延展木桶
+tile.barrels.barrel_plank_extension.big_oak.name=大型橡木木板延展木桶
+tile.barrels.barrel_rock.stone.name=石头 石桶
+tile.barrels.barrel_rock.granite.name=花岗岩 石桶
+tile.barrels.barrel_rock.granitesmooth.name=磨制 花岗岩 石桶
+tile.barrels.barrel_rock.diorite.name=闪长岩 石桶
+tile.barrels.barrel_rock.dioritesmooth.name=磨制 闪长岩 石桶
+tile.barrels.barrel_rock.andesite.name=安山岩 石桶
+tile.barrels.barrel_rock.andesitesmooth.name=磨制 安山岩 石桶
+tile.barrels.barrel_rock_extension.stone.name=石头延展石桶
+tile.barrels.barrel_rock_extension.granite.name=花岗岩延展石桶
+tile.barrels.barrel_rock_extension.granitesmooth.name=磨制花岗岩延展石桶
+tile.barrels.barrel_rock_extension.diorite.name=闪长岩延展石桶
+tile.barrels.barrel_rock_extension.dioritesmooth.name=磨制闪长岩延展石桶
+tile.barrels.barrel_rock_extension.andesite.name=安山岩延展石桶
+tile.barrels.barrel_rock_extension.andesitesmooth.name=磨制安山岩延展石桶
