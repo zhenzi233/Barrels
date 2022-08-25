@@ -1,0 +1,22 @@
+{
+  "group": "barrels:barrel_metal",
+  "result": {
+    "item": "barrels:barrel_metal",
+    "data": 2
+  },
+  "pattern": [
+    "cac",
+    "c c",
+    " c "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "c": {
+      "item": "minecraft:diamond",
+      "data": 0
+    }
+  }
+}

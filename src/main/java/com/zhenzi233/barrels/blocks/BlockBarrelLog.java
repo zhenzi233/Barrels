@@ -18,7 +18,7 @@ import net.minecraftforge.fluids.Fluid;
 
 public class BlockBarrelLog extends BlockBarrel {
 
-    private boolean extension;
+    private final boolean extension;
 
     public BlockBarrelLog(boolean extension) {
         super(Material.WOOD);

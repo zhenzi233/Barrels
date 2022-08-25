@@ -1,7 +1,10 @@
 #information for barrel
-itemGroup.barrels.barrels=More Barrels
+itemGroup.barrels=More Barrels
 #barrels item
 item.barrels.clay_bowl.name=Clay Bowl
+item.barrels.unfired_clay_bowl.name=Unfired Clay Bowl
+#barrel other block
+tile.barrels.cover.name=Cover
 #barrels block
 tile.barrels.barrel_log.oak.name=Oak Barrel
 tile.barrels.barrel_log.spruce.name=Spruce Barrel
@@ -41,3 +44,18 @@ tile.barrels.barrel_rock_extension.diorite.name=Diorite Barrel Extension
 tile.barrels.barrel_rock_extension.dioritesmooth.name=Polish Diorite Barrel Extension
 tile.barrels.barrel_rock_extension.andesite.name=Andesite Barrel Extension
 tile.barrels.barrel_rock_extension.andesitesmooth.name=Polish Andesite Barrel Extension
+tile.barrels.barrel_metal.iron.name=Iron Barrel
+tile.barrels.barrel_metal_extension.iron.name=Iron Barrel Extension
+tile.barrels.barrel_metal_cover.iron.name=Iron Cover Barrel
+tile.barrels.barrel_metal.gold.name=Gold Barrel
+tile.barrels.barrel_metal.diamond.name=Diamond Barrel
+tile.barrels.barrel_metal.obsidian.name=Obsidian Barrel
+tile.barrels.barrel_metal.emerald.name=Emerald Barrel
+tile.barrels.barrel_metal_extension.gold.name=Gold Barrel Extension
+tile.barrels.barrel_metal_extension.diamond.name=Diamond Barrel Extension
+tile.barrels.barrel_metal_extension.obsidian.name=Obsidian Barrel Extension
+tile.barrels.barrel_metal_extension.emerald.name=Emerald Barrel Extension
+tile.barrels.barrel_metal_cover.gold.name=Gold Cover Barrel
+tile.barrels.barrel_metal_cover.diamond.name=Diamond Cover Barrel
+tile.barrels.barrel_metal_cover.obsidian.name=Obsidian Cover Barrel
+tile.barrels.barrel_metal_cover.emerald.name=Emerald Cover Barrel

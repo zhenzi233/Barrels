@@ -1,11 +1,8 @@
 package com.zhenzi233.barrels.library;
 
-import net.minecraft.block.Block;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,7 +38,15 @@ public class Util {
         return "fail! need to report author!";
     }
 
+    public static void reloadFluidNamesToLocalName()
+    {
+        FluidNamesToLocalName.clear();
+        initFluidNamesToLocalName();
+    }
+
+    @Deprecated
     public static void printLang()
     {
+
     }
 }

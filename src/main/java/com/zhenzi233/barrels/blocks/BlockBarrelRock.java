@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.Fluid;
 
 public class BlockBarrelRock extends BlockBarrel {
-    private boolean extension;
+    private final boolean extension;
 
     public BlockBarrelRock(boolean extension) {
         super(Material.ROCK);

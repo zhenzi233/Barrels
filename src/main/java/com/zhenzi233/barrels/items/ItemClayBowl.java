@@ -1,8 +1,6 @@
 package com.zhenzi233.barrels.items;
 
-import com.zhenzi233.barrels.Barrels;
 import com.zhenzi233.barrels.library.Util;
-import knightminer.ceramics.library.FluidClayBucketWrapper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

@@ -1,0 +1,19 @@
+{
+  "group": "barrels:barrel_wooden",
+  "result": {
+    "item": "barrels:barrel_log",
+    "data": 4
+  },
+  "pattern": [
+    "c c",
+    "c c",
+    " c "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "c": {
+      "item": "minecraft:log2",
+      "data": 0
+    }
+  }
+}

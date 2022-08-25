@@ -1,0 +1,15 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "barrels:barrel"
+  },
+  "variants": {
+    "variant": {
+      "iron": { "textures": { "texture": "blocks/iron_block" }},
+      "gold": { "textures": { "texture": "blocks/gold_block" }},
+      "diamond": { "textures": { "texture": "blocks/diamond_block" }},
+      "obsidian": { "textures": { "texture": "blocks/obsidian" }},
+      "emerald": { "textures": { "texture": "blocks/emerald_block" }}
+    }
+  }
+}

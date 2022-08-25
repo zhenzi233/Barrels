@@ -1,0 +1,20 @@
+{
+  "group": "barrels:barrel_stone",
+  "result": {
+    "item": "barrels:barrel_rock_extension",
+    "data": 1,
+    "count": 2
+  },
+  "pattern": [
+    "c c",
+    "c c",
+    "c c"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "c": {
+      "item": "minecraft:stone",
+      "data": 1
+    }
+  }
+}

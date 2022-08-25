@@ -1,8 +1,6 @@
 package com.zhenzi233.barrels;
 
-import com.zhenzi233.barrels.blocks.BlockBarrelLog;
-import com.zhenzi233.barrels.blocks.BlockBarrelPlank;
-import com.zhenzi233.barrels.blocks.BlockBarrelRock;
+import com.zhenzi233.barrels.blocks.*;
 import com.zhenzi233.barrels.items.ItemClayBowl;
 import com.zhenzi233.barrels.items.ItemLog;
 import com.zhenzi233.barrels.library.Util;
@@ -14,6 +12,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -28,8 +27,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
-
 @Mod(modid = Barrels.MODID, name = Barrels.NAME, version = Barrels.VERSION, dependencies = "required-after:ceramics")
 public class Barrels
 {
@@ -37,7 +34,7 @@ public class Barrels
     public static final String NAME = "More Barrels For ASDUST";
     public static final String VERSION = "1.0";
 
-    private static Logger logger;
+    public static Logger logger;
 
     @SidedProxy(clientSide = "com.zhenzi233.barrels.proxy.ClientProxy", serverSide = "com.zhenzi233.barrels.proxy.ServerProxy")
     public static ProxyBase proxy;
@@ -56,7 +53,6 @@ public class Barrels
     public void init(FMLInitializationEvent event)
     {
         // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
 
         Blocks.FIRE.setFireInfo(BARREL_LOG, 5, 20);
         Blocks.FIRE.setFireInfo(BARREL_LOG_EXTENSION, 5, 20);
@@ -64,6 +60,7 @@ public class Barrels
         Blocks.FIRE.setFireInfo(BARREL_PLANK_EXTENSION, 20, 40);
 
         Util.initFluidNamesToLocalName();
+        tab.setIcon(new ItemStack(BARREL_PLANK));
     }
 
     public static Block BARREL_LOG = null;
@@ -72,7 +69,12 @@ public class Barrels
     public static Block BARREL_PLANK_EXTENSION = null;
     public static Block BARREL_ROCK = null;
     public static Block BARREL_ROCK_EXTENSION = null;
+    public static Block BARREL_METAL = null;
+    public static Block BARREL_METAL_EXTENSION = null;
+    public static Block BARREL_METAL_COVER = null;
+    public static Block COVER = null;
     public static Item CLAY_BOWL = null;
+    public static Item UNFIRED_CLAY_BOWL = null;
 
     @Mod.EventBusSubscriber(modid=MODID)
     public static class Registration {
@@ -88,8 +90,13 @@ public class Barrels
             BARREL_ROCK = registerBlock(r, new BlockBarrelRock(false), "barrel_rock");
             BARREL_ROCK_EXTENSION = registerBlock(r, new BlockBarrelRock(true), "barrel_rock_extension");
 
-            registerTE(TileBarrelLog.class, "barrel_log");
+            BARREL_METAL = registerBlock(r, new BlockBarrelMetal(false), "barrel_metal");
+            BARREL_METAL_EXTENSION = registerBlock(r, new BlockBarrelMetal(true), "barrel_metal_extension");
+            BARREL_METAL_COVER = registerBlock(r, new BlockBarrelCover(), "barrel_metal_cover");
 
+            COVER = registerBlock(r, new BlockCover(), "cover");
+
+            registerTE(TileBarrelLog.class, "barrel_log");
         }
 
         @SubscribeEvent
@@ -103,8 +110,13 @@ public class Barrels
             Ceramics.registerItemBlock(r, new ItemLog(BARREL_PLANK_EXTENSION));
             Ceramics.registerItemBlock(r, new ItemLog(BARREL_ROCK));
             Ceramics.registerItemBlock(r, new ItemLog(BARREL_ROCK_EXTENSION));
+            Ceramics.registerItemBlock(r, new ItemLog(BARREL_METAL));
+            Ceramics.registerItemBlock(r, new ItemLog(BARREL_METAL_EXTENSION));
+            Ceramics.registerItemBlock(r, new ItemLog(BARREL_METAL_COVER));
+            Ceramics.registerItemBlock(r, new ItemBlock(COVER));
 
             CLAY_BOWL = registerItem(r, new ItemClayBowl(), "clay_bowl");
+            UNFIRED_CLAY_BOWL = registerItem(r, new Item(), "unfired_clay_bowl");
         }
     }
 

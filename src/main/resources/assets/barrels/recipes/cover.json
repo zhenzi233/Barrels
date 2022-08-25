@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "barrels:cover"
+  },
+  "pattern": [
+    " a ",
+    "bbb",
+    "   "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "minecraft:glass"
+    }
+  }
+}

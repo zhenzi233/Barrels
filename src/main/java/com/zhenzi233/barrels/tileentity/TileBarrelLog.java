@@ -29,8 +29,6 @@ public class TileBarrelLog extends TileBarrel implements ITickable {
         super(baseCapacity);
     }
 
-    private int time;
-
     @Override
     public void update() {
         if (!world.isRemote)

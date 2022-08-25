@@ -1,7 +1,7 @@
 package com.zhenzi233.barrels.proxy;
 
 import com.zhenzi233.barrels.Barrels;
-import knightminer.ceramics.Ceramics;
+import com.zhenzi233.barrels.blocks.BlockBarrelMetal;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockStone;
@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -23,6 +24,12 @@ public class ClientProxy extends ProxyBase
     @Override
     public void preInit() {
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    @Override
+    public void init() {
+        MinecraftForge.EVENT_BUS.register(this);
+
     }
 
     @SubscribeEvent
@@ -41,7 +48,17 @@ public class ClientProxy extends ProxyBase
             registerBlockModel(Barrels.BARREL_ROCK, type.getMetadata(), "variant=" + type.getName());
             registerBlockModel(Barrels.BARREL_ROCK_EXTENSION, type.getMetadata(), "variant=" + type.getName());
         }
+
+        for (BlockBarrelMetal.EnumType type : BlockBarrelMetal.EnumType.values())
+        {
+            registerBlockModel(Barrels.BARREL_METAL, type.getMetadata(), "variant=" + type.getName());
+            registerBlockModel(Barrels.BARREL_METAL_EXTENSION, type.getMetadata(), "variant=" + type.getName());
+            registerBlockModel(Barrels.BARREL_METAL_COVER, type.getMetadata(), "variant=" + type.getName());
+        }
+        registerBlockModel(Barrels.COVER, 0, "");
+
         registerItemMeshModel(Barrels.CLAY_BOWL);
+        registerItemModel(Barrels.UNFIRED_CLAY_BOWL, 0, "");
     }
 
     private void registerItemModel(Item item, int meta, String name) {
