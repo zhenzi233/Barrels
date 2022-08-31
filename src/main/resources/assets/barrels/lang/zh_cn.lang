@@ -59,3 +59,5 @@ tile.barrels.barrel_metal_cover.gold.name=金盖桶
 tile.barrels.barrel_metal_cover.diamond.name=钻石盖桶
 tile.barrels.barrel_metal_cover.obsidian.name=黑曜石盖桶
 tile.barrels.barrel_metal_cover.emerald.name=绿宝石盖桶
+tile.barrels.barrel_module.normal.name=桶
+tile.barrels.barrel_module.extension.name=延展桶

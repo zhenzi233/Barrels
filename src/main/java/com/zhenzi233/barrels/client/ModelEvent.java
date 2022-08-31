@@ -24,7 +24,7 @@ public class ModelEvent {
 
         // tool tables
         replaceBarrelModel(normal, event);
-        replaceBarrelModel(extension, event);
+        replaceBarrelExtensionModel(extension, event);
 
         // silence the missing-model message for the default itemblock
 //        event.getModelRegistry().putObject(new ModelResourceLocation(LOCATION_Barrel, "inventory"), event.getModelRegistry().getObject(locToolStation));
@@ -41,6 +41,17 @@ public class ModelEvent {
             IModel model = ModelLoaderRegistry.getModel(location);
             IBakedModel standard = event.getModelRegistry().getObject(location);
             IBakedModel finalModel = new BakedBarrelModel(standard, model, DefaultVertexFormats.BLOCK);
+            event.getModelRegistry().putObject(location, finalModel);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void replaceBarrelExtensionModel(ModelResourceLocation location, ModelBakeEvent event) {
+        try {
+            IModel model = ModelLoaderRegistry.getModel(location);
+            IBakedModel standard = event.getModelRegistry().getObject(location);
+            IBakedModel finalModel = new BakedBarrelExtensionModel(standard, model, DefaultVertexFormats.BLOCK);
             event.getModelRegistry().putObject(location, finalModel);
         } catch(Exception e) {
             e.printStackTrace();

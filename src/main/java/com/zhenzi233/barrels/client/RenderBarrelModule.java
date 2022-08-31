@@ -40,10 +40,10 @@ public class RenderBarrelModule extends FastTESR<TileBarrelModule> {
             int color = fluid.getFluid().getColor(fluid);
             int brightness = mc.world.getCombinedLight(pos, fluid.getFluid().getLuminosity());
             RenderUtils.putTexturedQuad(renderer, stillSpr, 0.125, (double)height, 0.125, 0.75, 0, 0.75, EnumFacing.UP, color, brightness, false);
-            RenderUtils.putTexturedQuad(renderer, flowSpr, 0.125, (double)height, 0.125, 0.75, 0, 0.75, EnumFacing.EAST, color, brightness, true);
-            RenderUtils.putTexturedQuad(renderer, flowSpr, 0.125, (double)height, 0.125, 0.75, 0, 0.75, EnumFacing.WEST, color, brightness, true);
-            RenderUtils.putTexturedQuad(renderer, flowSpr, 0.125, (double)height, 0.125, 0.75, 0, 0.75, EnumFacing.NORTH, color, brightness, true);
-            RenderUtils.putTexturedQuad(renderer, flowSpr, 0.125, (double)height, 0.125, 0.75, 0, 0.75, EnumFacing.SOUTH, color, brightness, true);
+            RenderUtils.putTexturedQuad(renderer, flowSpr, 0.125, 0.125, 0.125, 0.75, (double)height - 0.125, 0.75, EnumFacing.EAST, color, brightness, true);
+            RenderUtils.putTexturedQuad(renderer, flowSpr, 0.125, 0.125, 0.125, 0.75, (double)height - 0.125, 0.75, EnumFacing.WEST, color, brightness, true);
+            RenderUtils.putTexturedQuad(renderer, flowSpr, 0.125, 0.125, 0.125, 0.75, (double)height - 0.125, 0.75, EnumFacing.NORTH, color, brightness, true);
+            RenderUtils.putTexturedQuad(renderer, flowSpr, 0.125, 0.125, 0.125, 0.75, (double)height - 0.125, 0.75, EnumFacing.SOUTH, color, brightness, true);
         }
     }
 }

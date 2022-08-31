@@ -24,9 +24,12 @@ public class ItemLog extends ItemCloth {
         }   else if (this.block == Barrels.BARREL_METAL || this.block == Barrels.BARREL_METAL_EXTENSION || this.block == Barrels.BARREL_METAL_COVER)
         {
             return super.getUnlocalizedName() + "." + BlockBarrelMetal.EnumType.byMetadata(stack.getMetadata()).getUnlocalizedName().toLowerCase();
-        }   else
+        }   else if (this.block == Barrels.BARREL_PLANK_EXTENSION ||this.block == Barrels.BARREL_PLANK ||this.block == Barrels.BARREL_LOG_EXTENSION ||this.block == Barrels.BARREL_LOG)
         {
             return super.getUnlocalizedName() + "." + BlockPlanks.EnumType.byMetadata(stack.getMetadata()).getUnlocalizedName().toLowerCase();
+        }   else
+        {
+            return super.getUnlocalizedName();
         }
     }
 }

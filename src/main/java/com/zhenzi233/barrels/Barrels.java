@@ -6,9 +6,11 @@ import com.zhenzi233.barrels.items.ItemLog;
 import com.zhenzi233.barrels.library.Util;
 import com.zhenzi233.barrels.misc.MilkFluid;
 import com.zhenzi233.barrels.proxy.ProxyBase;
+import com.zhenzi233.barrels.tileentity.TileBarrelExtensionModule;
 import com.zhenzi233.barrels.tileentity.TileBarrelLog;
 import com.zhenzi233.barrels.tileentity.TileBarrelModule;
 import knightminer.ceramics.Ceramics;
+import knightminer.ceramics.items.ItemBlockBarrel;
 import knightminer.ceramics.library.Config;
 import knightminer.ceramics.library.CreativeTab;
 import knightminer.ceramics.library.ModIDs;
@@ -85,6 +87,8 @@ public class Barrels
 
         Util.initFluidNamesToLocalName();
         tab.setIcon(new ItemStack(BARREL_PLANK));
+
+        GameRegistry.addSmelting(new ItemStack(UNFIRED_CLAY_BOWL, 1, 0), new ItemStack(CLAY_BOWL, 1, 0), 0.5f);
     }
 
     @EventHandler
@@ -145,6 +149,7 @@ public class Barrels
 
             registerTE(TileBarrelLog.class, "barrel_log");
             registerTE(TileBarrelModule.class, "barrel_module");
+            registerTE(TileBarrelExtensionModule.class, "barrel_extension_module");
         }
 
         @SubscribeEvent
@@ -161,7 +166,7 @@ public class Barrels
             Ceramics.registerItemBlock(r, new ItemLog(BARREL_METAL));
             Ceramics.registerItemBlock(r, new ItemLog(BARREL_METAL_EXTENSION));
             Ceramics.registerItemBlock(r, new ItemLog(BARREL_METAL_COVER));
-            Ceramics.registerItemBlock(r, new ItemLog(BARREL_MODULE));
+            Ceramics.registerItemBlock(r, new ItemBlockBarrel(BARREL_MODULE, "normal", "extension"));
             Ceramics.registerItemBlock(r, new ItemBlock(COVER));
 
             CLAY_BOWL = registerItem(r, new ItemClayBowl(), "clay_bowl");
