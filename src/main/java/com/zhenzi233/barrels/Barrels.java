@@ -131,18 +131,6 @@ public class Barrels
             BARREL_METAL_EXTENSION = registerBlock(r, new BlockBarrelMetal(true), "barrel_metal_extension");
             BARREL_METAL_COVER = registerBlock(r, new BlockBarrelCover(), "barrel_metal_cover");
 
-            for(Fluid fluid : FluidRegistry.getRegisteredFluids().values()) {
-                if (fluid.getName().equals("milk"))
-                {
-                    hasMilk = true;
-                    break;
-                }
-            }
-            if (!hasMilk)
-            {
-                MILK = registerBlock(r, new BlockFluid(MILK_FLUID, Material.WATER), "milk");
-            }
-
             BARREL_MODULE = registerBlock(r, new BlockBarrelModule(), "barrel_module");
 
             COVER = registerBlock(r, new BlockCover(), "cover");
@@ -173,6 +161,25 @@ public class Barrels
             UNFIRED_CLAY_BOWL = registerItem(r, new Item(), "unfired_clay_bowl");
         }
     }
+
+    public static class RegistrationInit {
+        @SubscribeEvent
+        public static void registerBlocks(RegistryEvent.Register<Block> event)
+        {
+            for(Fluid fluid : FluidRegistry.getRegisteredFluids().values()) {
+                if (fluid.getName().equals("milk"))
+                {
+                    hasMilk = true;
+                    break;
+                }
+            }
+            if (!hasMilk)
+            {
+                MILK = registerBlock(event.getRegistry(), new BlockFluid(MILK_FLUID, Material.WATER), "milk");
+            }
+        }
+    }
+
 
     public static <T extends Block> T registerBlock(IForgeRegistry<Block> registry, T block, String name) {
         block.setUnlocalizedName(MODID + "." + name);
