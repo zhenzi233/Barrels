@@ -71,10 +71,7 @@ public class ClientProxy extends ProxyBase
         registerItemMeshModel(Barrels.CLAY_BOWL);
         registerItemModel(Barrels.UNFIRED_CLAY_BOWL, 0, "");
 
-        if (!Barrels.hasMilk)
-        {
-            registerFluidModel("milk", Barrels.MILK);
-        }
+        registerFluidModel("milk", Barrels.MILK);
 
         Item barrelModule = Item.getItemFromBlock(Barrels.BARREL_MODULE);
         ModelLoader.setCustomModelResourceLocation(barrelModule, 0, ModelEvent.normal);

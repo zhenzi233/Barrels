@@ -68,17 +68,7 @@ public class Barrels
     public void init(FMLInitializationEvent event)
     {
         // some example code
-        for(Fluid fluid : FluidRegistry.getRegisteredFluids().values()) {
-            if (fluid.getName().equals("milk"))
-            {
-                hasMilk = true;
-                break;
-            }
-        }
-        if (!hasMilk)
-        {
-            FluidRegistry.registerFluid(MILK_FLUID);
-        }
+        FluidRegistry.registerFluid(MILK_FLUID);
 
         Blocks.FIRE.setFireInfo(BARREL_LOG, 5, 20);
         Blocks.FIRE.setFireInfo(BARREL_LOG_EXTENSION, 5, 20);
@@ -133,6 +123,8 @@ public class Barrels
 
             BARREL_MODULE = registerBlock(r, new BlockBarrelModule(), "barrel_module");
 
+            MILK = registerBlock(r, new BlockFluid(MILK_FLUID, Material.WATER), "milk");
+
             COVER = registerBlock(r, new BlockCover(), "cover");
 
             registerTE(TileBarrelLog.class, "barrel_log");
@@ -159,24 +151,6 @@ public class Barrels
 
             CLAY_BOWL = registerItem(r, new ItemClayBowl(), "clay_bowl");
             UNFIRED_CLAY_BOWL = registerItem(r, new Item(), "unfired_clay_bowl");
-        }
-    }
-
-    public static class RegistrationInit {
-        @SubscribeEvent
-        public static void registerBlocks(RegistryEvent.Register<Block> event)
-        {
-            for(Fluid fluid : FluidRegistry.getRegisteredFluids().values()) {
-                if (fluid.getName().equals("milk"))
-                {
-                    hasMilk = true;
-                    break;
-                }
-            }
-            if (!hasMilk)
-            {
-                MILK = registerBlock(event.getRegistry(), new BlockFluid(MILK_FLUID, Material.WATER), "milk");
-            }
         }
     }
 
