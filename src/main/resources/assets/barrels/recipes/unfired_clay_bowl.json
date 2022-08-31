@@ -1,16 +1,19 @@
 {
   "result": {
     "item": "barrels:unfired_clay_bowl",
-    "data": 0
+    "data": 0,
+    "count": 2
   },
   "pattern": [
-    "  ",
-    "bb"
+    "b b",
+    " b ",
+    "   "
   ],
   "type": "forge:ore_shaped",
   "key": {
     "b": {
-      "item": "minecraft:clay_ball"
+      "item": "ceramics:unfired_clay",
+      "data": 8
     }
   }
 }

@@ -4,11 +4,18 @@ import com.zhenzi233.barrels.blocks.*;
 import com.zhenzi233.barrels.items.ItemClayBowl;
 import com.zhenzi233.barrels.items.ItemLog;
 import com.zhenzi233.barrels.library.Util;
+import com.zhenzi233.barrels.misc.MilkFluid;
 import com.zhenzi233.barrels.proxy.ProxyBase;
 import com.zhenzi233.barrels.tileentity.TileBarrelLog;
+import com.zhenzi233.barrels.tileentity.TileBarrelModule;
 import knightminer.ceramics.Ceramics;
+import knightminer.ceramics.library.Config;
 import knightminer.ceramics.library.CreativeTab;
+import knightminer.ceramics.library.ModIDs;
+import knightminer.ceramics.plugin.tconstruct.TConstructPlugin;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.block.statemap.BlockStateMapper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -16,11 +23,15 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -41,6 +52,8 @@ public class Barrels
 
     public static CreativeTab tab = new CreativeTab(MODID, new ItemStack(Items.BRICK));
 
+    public static boolean hasMilk = false;
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
@@ -53,6 +66,17 @@ public class Barrels
     public void init(FMLInitializationEvent event)
     {
         // some example code
+        for(Fluid fluid : FluidRegistry.getRegisteredFluids().values()) {
+            if (fluid.getName().equals("milk"))
+            {
+                hasMilk = true;
+                break;
+            }
+        }
+        if (!hasMilk)
+        {
+            FluidRegistry.registerFluid(MILK_FLUID);
+        }
 
         Blocks.FIRE.setFireInfo(BARREL_LOG, 5, 20);
         Blocks.FIRE.setFireInfo(BARREL_LOG_EXTENSION, 5, 20);
@@ -61,6 +85,11 @@ public class Barrels
 
         Util.initFluidNamesToLocalName();
         tab.setIcon(new ItemStack(BARREL_PLANK));
+    }
+
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(CLAY_BOWL);
     }
 
     public static Block BARREL_LOG = null;
@@ -73,8 +102,12 @@ public class Barrels
     public static Block BARREL_METAL_EXTENSION = null;
     public static Block BARREL_METAL_COVER = null;
     public static Block COVER = null;
+    public static Block BARREL_MODULE = null;
+    public static Block MILK = null;
+    public static Fluid MILK_FLUID = new MilkFluid(MilkFluid.name, MilkFluid.still, MilkFluid.flowing);
     public static Item CLAY_BOWL = null;
     public static Item UNFIRED_CLAY_BOWL = null;
+
 
     @Mod.EventBusSubscriber(modid=MODID)
     public static class Registration {
@@ -94,9 +127,24 @@ public class Barrels
             BARREL_METAL_EXTENSION = registerBlock(r, new BlockBarrelMetal(true), "barrel_metal_extension");
             BARREL_METAL_COVER = registerBlock(r, new BlockBarrelCover(), "barrel_metal_cover");
 
+            for(Fluid fluid : FluidRegistry.getRegisteredFluids().values()) {
+                if (fluid.getName().equals("milk"))
+                {
+                    hasMilk = true;
+                    break;
+                }
+            }
+            if (!hasMilk)
+            {
+                MILK = registerBlock(r, new BlockFluid(MILK_FLUID, Material.WATER), "milk");
+            }
+
+            BARREL_MODULE = registerBlock(r, new BlockBarrelModule(), "barrel_module");
+
             COVER = registerBlock(r, new BlockCover(), "cover");
 
             registerTE(TileBarrelLog.class, "barrel_log");
+            registerTE(TileBarrelModule.class, "barrel_module");
         }
 
         @SubscribeEvent
@@ -113,6 +161,7 @@ public class Barrels
             Ceramics.registerItemBlock(r, new ItemLog(BARREL_METAL));
             Ceramics.registerItemBlock(r, new ItemLog(BARREL_METAL_EXTENSION));
             Ceramics.registerItemBlock(r, new ItemLog(BARREL_METAL_COVER));
+            Ceramics.registerItemBlock(r, new ItemLog(BARREL_MODULE));
             Ceramics.registerItemBlock(r, new ItemBlock(COVER));
 
             CLAY_BOWL = registerItem(r, new ItemClayBowl(), "clay_bowl");

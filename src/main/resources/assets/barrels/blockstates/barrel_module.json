@@ -1,0 +1,18 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "texture": "blocks/coal_block"
+    }
+  },
+  "variants": {
+    "extension": {
+      "true": {
+        "model": "barrels:barrel_extension"
+      },
+      "false": {
+        "model": "barrels:barrel"
+      }
+    }
+  }
+}

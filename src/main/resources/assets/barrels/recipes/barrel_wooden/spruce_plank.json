@@ -1,7 +1,7 @@
 {
   "group": "barrels:barrel_wooden",
   "result": {
-    "item": "barrels:barrel",
+    "item": "barrels:barrel_plank",
     "data": 1
   },
   "pattern": [

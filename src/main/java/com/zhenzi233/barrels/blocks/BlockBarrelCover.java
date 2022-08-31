@@ -29,6 +29,10 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -97,6 +101,10 @@ public class BlockBarrelCover extends BlockBarrel {
     }
 
     @Override
+    public void fillWithRain(World world, BlockPos pos) {
+    }
+
+    @Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
     {
         TileEntity tileentity = worldIn.getTileEntity(pos);
@@ -132,16 +140,8 @@ public class BlockBarrelCover extends BlockBarrel {
         {
             NBTTagCompound coNbt = nbt.getCompoundTag("container");
             NBTTagCompound tank = coNbt.getCompoundTag("tank");
-            if (!tank.hasNoTags())
-            {
-                String name = tank.getString("FluidName");
-                int amount = tank.getInteger("Amount");
-                if (!name.isEmpty() && !(amount <= 0))
-                {
-                    tooltip.add(Util.getLocalizedNameFromUnlocalizedNameInFluid(name));
-                    tooltip.add("" + amount);
-                }
-            }
+            tooltip.add(Util.getTankInformation(tank, true, true));
+            tooltip.add(Util.getTankInformation(tank, false, true));
         }
     }
 
